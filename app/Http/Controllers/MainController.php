@@ -9,9 +9,12 @@ class MainController extends Controller
     public function home() {
 
         $movies = Movies::all();
-        var_dump($movies);
+
+        $data = [
+            "movies" => $movies
+        ];
        
 
-        return view("pages.home");
+        return view("pages.home", $data);
     }
 }
